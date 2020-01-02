@@ -2,8 +2,9 @@
 #include "Carte.hh"
 using namespace std;
 
-class CarteEau : Carte{
+class CarteEau : public Carte{
 	public:
-		CarteEau(int taux, string na):Carte("Eau", taux, na){}
-		virtual string toString();
+		CarteEau():Carte("Eau"){}
+		CarteEau(int pt, string name, string description):Carte("Eau", pt, name ,description){}
+		string toString() const{return name;};
 };
