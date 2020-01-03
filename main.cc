@@ -3,9 +3,9 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>*/
 //A SUPPR APRES
-#include "PersonnageFeu.hh"
+#include "ChevalierEau.hh"
 #include "Personnage.hh"
-#include "PersonnageEau.hh"
+#include "ChevalierFeu.hh"
 #include "JeuDeCartes.hh"
 #include "Carte.hh"
 #include "CarteEau.hh"

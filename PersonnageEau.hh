@@ -3,6 +3,6 @@
 class PersonnageEau : public Personnage{
 	public:
 		PersonnageEau(int ptvie,int attaque, string na):Personnage("Eau",ptvie,attaque,na){}
-		virtual void attaquer(Personnage& p) const = 0;
+		//void attaquer(Personnage& p) const{}
 		void subirEffet(Carte& c);
 };
