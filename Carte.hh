@@ -5,11 +5,14 @@ using namespace std;
 class Carte{
 	protected :
 		string attribut;
-		int tauxFum;
+		int point;
 		string name;
+		string description;
 	public:
-		Carte(string attr, int taux, string na):attribut(attr),tauxFum(taux),name(na){}
+		Carte(string attr):attribut(attr){}
+		Carte(string attr, int pt, string na, string descr):attribut(attr),point(pt),name(na),description(descr){}
 		virtual string toString() const = 0;
-		int getTaux(){return tauxFum;}
+		int getPoint(){return point;}
 		string getAttr(){return attribut;}
+		string getName(){return name;}
 };

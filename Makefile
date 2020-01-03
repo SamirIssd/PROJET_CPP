@@ -1,6 +1,7 @@
 CC=g++
-CCFLAGS= -Wall -std=c++11 -g
-LIBFLAGS= 
+CCFLAGS= -Wall -std=c++11 -g 
+LIBFLAGS=
+L = -I/usr/include/SDL2 -lSDL2_image -lSDL2_ttf -lSDL2 -lpthread
 SRC= $(wildcard *.cc)
 OBJ= $(SRC:.cc=.o)
 TST= $(wildcard unitTest/*.cc)
@@ -17,7 +18,7 @@ $(EXEC): $(OBJ)
 	$(CC) $(LIBFLAGS) $^ -o $@  
 
 %.o: %.cc
-	$(CC) $(CCFLAGS) -o $@ -c $<
+	$(CC) $(CCFLAGS) -o $@ -c $< $(LIBFLAGS)
 
 .depend:
 	g++ -MM $(SRC) > .depends
@@ -28,4 +29,3 @@ clean:
 cleantest:
 	rm -f $(OBJ_TEST) testcase
 distclean : clean cleantest
-
