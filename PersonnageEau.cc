@@ -29,7 +29,7 @@ void PersonnageEau::subirEffet(Carte& c){
 
 void PersonnageEau::generateEnnemis(){
 	srand(time(NULL));
-	int random = rand() % 3;  //On fait apparaitre entre 0 et 2 ennemis par tour
+	int random = rand() % 2 + 3;  //On fait apparaitre entre 0 et 2 ennemis par tour
 	for(int i = 0; i < random; i++){
 		ennemis.push_back(new PersonnageFeu());
 	}
