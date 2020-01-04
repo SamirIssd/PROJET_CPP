@@ -38,15 +38,14 @@ int main(){
    		cin >> a; 
     	c = j.piocher();
     }*/
-    int a = 2;
-    cout << a << std::endl;
-    cout << a << std::endl;
-    cout << a;
-    cout << "\x1b[A" << "\x1b[A" << "\t" << "abc" << std::endl<< "\tbbx" << std::endl<< std::endl;
-    ChevalierEau jean(90, 10, "bg", 10);
-    cout << jean << endl;
-    ChevalierFeu claude(90, 10, "damso", 0);
-    cout << claude;
+    ChevalierEau jean(90, 10, "Dams", 10);
+    cout << jean << endl<< endl;
+    //cout << "\x1b[A" << "\x1b[A" << "\x1b[A"<< "\x1b[A"<< "\x1b[A";
+    //cout << "\t\t\t\t" << "test" << endl << endl;
+    //cout << claude;
+    jean.jouer("damso");
+   /* jean.jouer("damso");
+    jean.jouer("damso");*/
     //std::cout << c->getName() << std::endl;
     return 0;
 }
