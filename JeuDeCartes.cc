@@ -32,7 +32,7 @@ Carte* JeuDeCartes::piocher(){
 	int random = rand() % tailleDeck , i = 0;
 	Carte *c;// = deck.begin()->first;
 	for(std::map<Carte*,int>::iterator it=deck.begin(); it!=deck.end(); ++it){
-		std::cout << it->first->getName() << " : " << it->second << std::endl;
+		//std::cout << it->first->getName() << " : " << it->second << std::endl;
 		if(i == random){
 				c = it->first;
 				it->second--;

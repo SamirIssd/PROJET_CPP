@@ -16,10 +16,12 @@ void PersonnageFeu::subirEffet(Carte& c){
 		tauxFum += c .getPoint();
 	}
 	if(c.getAttr() == "Feu"){
+			cout << "Vous gagnez " << c .getPoint() << " points d'attaque pour ce tour !" << endl;
 			effet = c .getPoint();
 			attaque = attaque + effet;
 	}
 	if(c.getAttr() == "Eau"){
+		cout << "Tous vos ennemis gagnent  " << c .getPoint() << " points d'attaque pour ce tour !" << endl;
 		for(list<Personnage*>::iterator it=ennemis.begin(); it!=ennemis.end(); ++it){
 				(*it)->setEffet(c .getPoint());
 				(*it)->setAtq((*it)->getAtq() + c .getPoint());
@@ -29,7 +31,7 @@ void PersonnageFeu::subirEffet(Carte& c){
 
 void PersonnageFeu::generateEnnemis(){
 	srand(time(NULL));
-	int random = rand() % 2 + 3;  //On fait apparaitre entre 0 et 2 ennemis par tour
+	int random = rand() % 2 + 1;  //On fait apparaitre entre 1 et 2 ennemis par tour
 	for(int i = 0; i < random; i++){
 		ennemis.push_back(new PersonnageEau());
 	}
@@ -43,8 +45,9 @@ void PersonnageFeu::finDeTour(){
 	for(list<Personnage*>::iterator it=ennemis.begin(); it!=ennemis.end(); ++it){
 				(*it)->finDeTour();
 	}
-	if(tauxFum < 0)
+	if(tauxFum < 0){
 		pv = pv + tauxFum;  //Si taux fum < 0, les personnages feux perdents des pvs
+	}
 	if(tauxFum > 0)
 		pv = pv + tauxFum;	//Sinon ils recuperent des pvs
 }

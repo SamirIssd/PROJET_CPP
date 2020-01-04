@@ -46,8 +46,6 @@ int main(){
     CarteEau lacrim(10, "lacrim", "Si t'oublies son prénom, emmene la au starbuck");
     cout << claude << endl;
     cout << lacrim << endl;
-    ChevalierEau jean(90, 10, "Damso", 10);
-    cout << jean << endl << endl;
     Tsunami booba;
     cout << booba << endl;
     Boisson vodka;
@@ -55,7 +53,22 @@ int main(){
     Brasier ok;
     cout << ok << endl;
     Volcano bang;
-    cout << bang << endl;
-    jean.jouer("dams");
+    cout << bang << endl << endl;
+
+    JeuDeCartes j;
+    ChevalierEau jean(90, 10, "Damso", 1);
+    jean.jouer("");
+    cout << jean;
+
+    string cible;
+    while(1){	
+    	Carte* carte = j.piocher();
+    	cout << *carte << endl;
+    	jean.subirEffet(*carte);
+    	cout << "Entrez le nom de votre cible : ";
+    	cin >> cible;
+	    jean.jouer(cible);
+	    cout << jean;
+    }
     return 0;
 }

@@ -16,10 +16,12 @@ void PersonnageEau::subirEffet(Carte& c){
 
 	}
 	if(c.getAttr() == "Eau"){
-			effet = c .getPoint();
-			attaque = attaque + effet;
+		cout << "Vous gagnez " << c .getPoint() << " points d'attaque pour ce tour !" << endl;
+		effet = c .getPoint();
+		attaque = attaque + effet;
 	}
 	if(c.getAttr() == "Feu"){
+		cout << "Tous vos ennemis gagnent  " << c .getPoint() << " points d'attaque pour ce tour !" << endl;
 		for(list<Personnage*>::iterator it=ennemis.begin(); it!=ennemis.end(); ++it){
 				(*it)->setEffet(c .getPoint());
 				(*it)->setAtq((*it)->getAtq() + c .getPoint());
@@ -29,7 +31,7 @@ void PersonnageEau::subirEffet(Carte& c){
 
 void PersonnageEau::generateEnnemis(){
 	srand(time(NULL));
-	int random = rand() % 2 + 3;  //On fait apparaitre entre 0 et 2 ennemis par tour
+	int random = rand() % 2 + 1;  //On fait apparaitre entre 1 et 2 ennemis par tour
 	for(int i = 0; i < random; i++){
 		ennemis.push_back(new PersonnageFeu());
 	}

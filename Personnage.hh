@@ -28,6 +28,7 @@ class Personnage{
 		virtual void finDeTour() = 0;
 		//operateur
 		friend std::ostream& operator <<(std::ostream & out, Personnage& p); 
+		friend std::ostream& operator <<(std::ostream & out, list<Personnage*> liste); 
 		//GET et SET
 		void setPv(int n){pv = n;}
 		int getPv(){return pv;}
