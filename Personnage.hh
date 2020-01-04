@@ -1,5 +1,6 @@
 #pragma once
 #include<string>
+#include <ostream>
 #include <list>
 #include <stdlib.h>  
 #include <time.h>  
@@ -24,7 +25,8 @@ class Personnage{
 		virtual void generateEnnemis() = 0;
 		void jouer(string name);
 		virtual void finDeTour() = 0;
-
+		//operateur
+		friend std::ostream& operator <<(std::ostream & out, Personnage& p); 
 		//GET et SET
 		void setPv(int n){pv = n;}
 		int getPv(){return pv;}
@@ -32,3 +34,4 @@ class Personnage{
 		int getAtq(){return attaque;}
 		void setEffet(int n){effet = n;}
 };
+

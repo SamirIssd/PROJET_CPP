@@ -13,3 +13,10 @@ void Personnage::jouer(string name){
 	generateEnnemis();
 	finDeTour();
 }
+ostream& operator <<(ostream & out, Personnage& p)
+{
+	out << "Nom : " << p.name << endl << "Point de Vie : " << p.pv << endl << "Atq : " << p.attaque << endl;
+ 	if(p.defense != 0)
+		out << "Def : " << p.defense << endl;
+	return out;
+}

@@ -43,7 +43,10 @@ int main(){
     cout << a << std::endl;
     cout << a;
     cout << "\x1b[A" << "\x1b[A" << "\t" << "abc" << std::endl<< "\tbbx" << std::endl<< std::endl;
-
+    ChevalierEau jean(90, 10, "bg", 10);
+    cout << jean << endl;
+    ChevalierFeu claude(90, 10, "damso", 0);
+    cout << claude;
     //std::cout << c->getName() << std::endl;
     return 0;
 }
