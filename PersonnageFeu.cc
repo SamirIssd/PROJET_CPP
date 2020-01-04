@@ -1,7 +1,7 @@
-#include "PersonnageEau.hh"
+#include "PersonnageFeu.hh"
 
-int PersonnageEau::nbPerso = 0;
-PersonnageEau::PersonnageEau():Personnage("Eau"){
+int PersonnageFeu::nbPerso = 0;
+PersonnageFeu::PersonnageFeu():Personnage("Feu"){
 	nbPerso++;
 	name = "Ennemi" + std::to_string(nbPerso);
 	srand(time(NULL));
@@ -10,6 +10,6 @@ PersonnageEau::PersonnageEau():Personnage("Eau"){
 	defense = 0;
 }
 
-void PersonnageEau::subirEffet(Carte& c){
+void PersonnageFeu::subirEffet(Carte& c){
 	pv -= 1;
 }
