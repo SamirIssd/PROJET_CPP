@@ -31,13 +31,18 @@ int main(){
 	 	SDL_PollEvent(&event);
  	}*/
     //SDL_Quit();
-    JeuDeCartes j;
+   /* JeuDeCartes j;
     Carte* c = j.piocher();
     int a;
     while(1){
    		cin >> a; 
     	c = j.piocher();
-    }
+    }*/
+    int a = 2;
+    cout << a << std::endl;
+    cout << a << std::endl;
+    cout << a;
+    cout << "\x1b[A" << "\x1b[A" << "\t" << "abc" << std::endl<< "\tbbx" << std::endl<< std::endl;
 
     //std::cout << c->getName() << std::endl;
     return 0;

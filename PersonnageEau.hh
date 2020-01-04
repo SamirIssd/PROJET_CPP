@@ -5,8 +5,9 @@ class PersonnageEau : public Personnage{
 		static int nbPerso;
 	public:
 		PersonnageEau();
-		PersonnageEau(int ptvie,int attaque, string na):Personnage("Eau",ptvie,attaque,na){}
-		PersonnageEau(int ptvie,int attaque, string na, int def):Personnage("Eau",ptvie,attaque,na, def){}
-		//void attaquer(Personnage& p) const{}
+		PersonnageEau(int ptvie,int attaque, string na):Personnage(ptvie,attaque,na){}
+		PersonnageEau(int ptvie,int attaque, string na, int def):Personnage(ptvie,attaque,na, def){}
 		void subirEffet(Carte& c);
+		void generateEnnemis();
+		void finDeTour();
 };
