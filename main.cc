@@ -9,7 +9,11 @@
 #include "JeuDeCartes.hh"
 #include "Carte.hh"
 #include "CarteEau.hh"
-#include "CarteFeu.hh"
+//#include "CarteFeu.hh"
+#include "Tsunami.hh"
+#include "Boisson.hh"
+#include "Volcano.hh"
+#include "Brasier.hh"
 
 using namespace std;
 
@@ -48,7 +52,15 @@ int main(){
     ChevalierFeu claude(90, 10, "damso", 0);
     CarteEau lacrim(10, "lacrim", "Si t'oublies son prénom, emmene la au starbuck");
     cout << claude << endl;
-    cout << lacrim;
+    cout << lacrim << endl;
+    Tsunami booba;
+    cout << booba << endl;
+    Boisson vodka;
+    cout << vodka << endl;
+    Brasier ok;
+    cout << ok << endl;
+    Volcano bang;
+    cout << bang << endl;
     //std::cout << c->getName() << std::endl;
     return 0;
 }
