@@ -46,7 +46,9 @@ int main(){
     ChevalierEau jean(90, 10, "bg", 10);
     cout << jean << endl;
     ChevalierFeu claude(90, 10, "damso", 0);
-    cout << claude;
+    CarteEau lacrim(10, "lacrim", "Si t'oublies son prénom, emmene la au starbuck");
+    cout << claude << endl;
+    cout << lacrim;
     //std::cout << c->getName() << std::endl;
     return 0;
 }
