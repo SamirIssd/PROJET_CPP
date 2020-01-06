@@ -14,6 +14,7 @@ class Personnage{
 		string name;
 		int defense;
 		list<Personnage*> ennemis;
+		list<Carte*> mainJoueur;
 		int effet;
 		static int tauxFum;
 	public:
@@ -26,9 +27,12 @@ class Personnage{
 		virtual void subirEffet(Carte& c) = 0;
 		virtual void generateEnnemis() = 0;
 		virtual void finDeTour() = 0;
+		void prendreCarte(Carte& c);
+		void jouerCarte(bool b);
 		//operateur
 		friend std::ostream& operator <<(std::ostream & out, Personnage& p); 
 		friend std::ostream& operator <<(std::ostream & out, list<Personnage*> liste); 
+		friend std::ostream& operator <<(std::ostream & out, list<Carte*> listeCarte); 
 		//GET et SET
 		void setPv(int n){pv = n;}
 		int getPv(){return pv;}
@@ -36,5 +40,6 @@ class Personnage{
 		int getAtq(){return attaque;}
 		void setEffet(int n){effet = n;}
 		string getName(){return name;}
+		list<Carte*> getMainJr(){return mainJoueur;};
 };
 

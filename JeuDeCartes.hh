@@ -5,18 +5,23 @@
 #include <iostream>
 #include "CarteEau.hh"
 #include "CarteFeu.hh"
+#include "CarteFum.hh"
+#include "Tsunami.hh"
+#include "Brasier.hh"
+#include "Boisson.hh"
+#include "Volcano.hh"
 using namespace std;
 
 class JeuDeCartes{
 	private :
-		CarteEau e1;
+		/*CarteEau e1;
 		CarteEau e2;
 		CarteEau e3;
 		CarteFeu f1;
 		CarteFeu f2;
 		CarteFeu f3;
-		CarteFeu c1;
-		CarteEau c2;
+		CarteFum c1;
+		CarteFum c2;*/
 		
 	protected :
 		static int tailleDeck; //nb de cartes différentes

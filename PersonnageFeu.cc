@@ -16,16 +16,33 @@ void PersonnageFeu::subirEffet(Carte& c){
 		tauxFum += c .getPoint();
 	}
 	if(c.getAttr() == "Feu"){
-			cout << "Vous gagnez " << c .getPoint() << " points d'attaque pour ce tour !" << endl;
+		if(c.getType() == "Soin"){
+			effet = c .getPoint();
+			pv = pv + effet;
+		}
+		else
+		{
 			effet = c .getPoint();
 			attaque = attaque + effet;
+		}
 	}
 	if(c.getAttr() == "Eau"){
-		cout << "Tous vos ennemis gagnent  " << c .getPoint() << " points d'attaque pour ce tour !" << endl;
-		for(list<Personnage*>::iterator it=ennemis.begin(); it!=ennemis.end(); ++it){
+		if(c.getType() == "Soin"){
+			
+			for(list<Personnage*>::iterator it=ennemis.begin(); it!=ennemis.end(); ++it){
+				(*it)->setEffet(c .getPoint());
+				(*it)->setPv((*it)->getPv() + c .getPoint());
+			}
+		}
+		else
+		{
+			for(list<Personnage*>::iterator it=ennemis.begin(); it!=ennemis.end(); ++it){
 				(*it)->setEffet(c .getPoint());
 				(*it)->setAtq((*it)->getAtq() + c .getPoint());
+			}
 		}
+		
+		
 	}
 }
 

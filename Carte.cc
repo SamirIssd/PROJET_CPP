@@ -2,6 +2,7 @@
 
 ostream& operator <<(ostream & out, Carte& p)
 {
-	out << "Type : " << p.attribut << endl << "Nom : " <<  p.name << endl << "Point : " << p.point << endl << "Description : " << p.description << endl;
+	out << "=== Carte pioché : " << p.name << " ==="<< endl;
+	out << "Type : " << p.attribut << endl << p.description << endl;
 	return out;
 }

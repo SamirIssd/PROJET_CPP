@@ -10,10 +10,6 @@
 #include "Carte.hh"
 #include "CarteEau.hh"
 //#include "CarteFeu.hh"
-#include "Tsunami.hh"
-#include "Boisson.hh"
-#include "Volcano.hh"
-#include "Brasier.hh"
 
 using namespace std;
 
@@ -42,33 +38,23 @@ int main(){
    		cin >> a; 
     	c = j.piocher();
     }*/
-    ChevalierFeu claude(90, 10, "damso", 0);
-    CarteEau lacrim(10, "lacrim", "Si t'oublies son prénom, emmene la au starbuck");
-    cout << claude << endl;
-    cout << lacrim << endl;
-    Tsunami booba;
-    cout << booba << endl;
-    Boisson vodka;
-    cout << vodka << endl;
-    Brasier ok;
-    cout << ok << endl;
-    Volcano bang;
-    cout << bang << endl << endl;
 
     JeuDeCartes j;
     ChevalierEau jean(90, 10, "Damso", 1);
     jean.jouer("");
-    cout << jean;
 
     string cible;
+    int i = 1;
     while(1){	
+        cout << "=================== TOUR : " << i << " ==================="<< endl << endl ;
     	Carte* carte = j.piocher();
-    	cout << *carte << endl;
-    	jean.subirEffet(*carte);
+    	jean.prendreCarte(*carte);
     	cout << "Entrez le nom de votre cible : ";
     	cin >> cible;
 	    jean.jouer(cible);
-	    cout << jean;
+        i++;
+        cout << endl << endl << endl << endl << endl;
     }
+  
     return 0;
 }

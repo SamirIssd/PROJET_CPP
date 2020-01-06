@@ -5,7 +5,7 @@ using namespace std;
 class Volcano : public CarteFeu{
 
 	public:
-		Volcano():CarteFeu(10, "Volcano", "Bang !!!!"){};
+		Volcano():CarteFeu(4, "Volcano", "Bang !!!!", "Attaque"){};
 
 };
 
